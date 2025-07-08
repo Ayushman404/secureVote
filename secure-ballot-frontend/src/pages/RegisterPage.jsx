@@ -23,7 +23,7 @@ const Register = () => {
   // Check if registration is open
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/admin/status")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/admin/status`)
       .then((res) => {
         const { isRegistrationOpen } = res.data;
         setRegistrationOpen(isRegistrationOpen);
@@ -49,7 +49,7 @@ const Register = () => {
     e.preventDefault();
 
     //Checking if the user already exists
-    const existing = await axios.post("http://localhost:3000/api/auth/check", {
+    const existing = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/check`, {
       email: formData.email,
     });
 
@@ -65,7 +65,7 @@ const Register = () => {
     setUserInfo({ name: formData.name, email: formData.email });
 
     axios
-      .post("http://localhost:3000/api/auth/register", {
+      .post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/register`, {
         name: formData.name,
         email: formData.email,
         password: formData.password,

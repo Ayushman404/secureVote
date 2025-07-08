@@ -6,7 +6,7 @@ const Voters = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/voter/list")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/voter/list`)
       .then((response) => {
         console.log("Voters list fetched successfully:", response.data);
         setVoters(response.data);

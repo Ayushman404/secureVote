@@ -61,7 +61,7 @@ export default function VotePage() {
   //Checking if Admin Allowed Voting?
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/admin/status")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/admin/status`)
       .then((res) => {
         const { isVotingOpen } = res.data;
         setVotingOpen(isVotingOpen);
@@ -73,7 +73,7 @@ export default function VotePage() {
 
   const getRing = useCallback(async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/voter/ring", {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/voter/ring`, {
         publicKey: ec.keyFromPrivate(privateKeyHex, 'hex').getPublic().encode('hex')
       });
       console.log(response.data);
@@ -120,7 +120,7 @@ export default function VotePage() {
 
       // Posting the signature and message to backend
       const response = await axios.post(
-        "http://localhost:3000/api/vote/verify",
+        `${import.meta.env.VITE_BACKEND_URL}/api/vote/verify`,
         {
           message,
           ring,

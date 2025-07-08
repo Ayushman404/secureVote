@@ -12,7 +12,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 //Middlewares
-app.use(cors());
+app.use(cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+}));
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -28,7 +31,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/voter', require('./routes/voterRoute.js'));
 app.use('/api/vote', require('./routes/voteRoute.js'));
 app.use('/api/admin', require('./routes/adminRoute.js'));
-app.use('/api/msal', require('./routes/msalRoute.js'));
+
 
 
 

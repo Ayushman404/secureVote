@@ -20,7 +20,7 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/admin/status", {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/admin/status`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -39,7 +39,7 @@ export default function AdminDashboard() {
   const handleToggle = async (type) => {
     try {
       await axios.post(
-        `http://localhost:3000/api/admin/toggle-${type}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/admin/toggle-${type}`,
         { status: type === "voting" ? votingOpen : registrationOpen },
         {
           headers: {

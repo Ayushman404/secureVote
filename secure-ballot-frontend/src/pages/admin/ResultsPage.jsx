@@ -10,7 +10,7 @@ const ResultsPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/admin/results", {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/admin/results`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
         },
