@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 
 //Middlewares
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FRONTEND_ORIGIN,
     credentials: true,
 }));
 app.use(helmet());
