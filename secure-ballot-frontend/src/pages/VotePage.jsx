@@ -251,7 +251,7 @@ export default function VotePage() {
                 </h3>
                 <button
                   onClick={() => handleVote(pos.title, candidate.name)}
-                  className={`w-full py-2 rounded-xl font-semibold transition-all ${
+                  className={`w-full py-2 rounded-xl font-semibold cursor-pointer transition-all ${
                     selected[pos.title] === candidate.name
                       ? "bg-indigo-600 text-white"
                       : "bg-indigo-100 text-indigo-700 hover:bg-indigo-500 hover:text-white"
@@ -289,7 +289,7 @@ export default function VotePage() {
       <div className="mt-12 text-center">
         <button
           onClick={handleSubmit}
-          className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-10 rounded-2xl shadow-xl transition-all duration-300 text-lg hover:scale-105"
+          className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-10 rounded-2xl shadow-xl transition-all duration-300 text-lg cursor-pointer hover:scale-105"
         >
           Submit Vote <FaUserCheck className="inline ml-2 text-xl" />
         </button>
