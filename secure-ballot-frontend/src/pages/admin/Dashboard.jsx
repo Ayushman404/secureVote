@@ -90,7 +90,7 @@ export default function AdminDashboard() {
           </div>
           <button
             onClick={() => handleToggle("registration")}
-            className={`px-5 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+            className={`px-5 py-2.5 rounded-full font-semibold cursor-pointer transition-all duration-300 shadow-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 ${
               registrationOpen
                 ? "bg-red-500 hover:bg-red-600 focus:ring-red-400"
                 : "bg-green-500 hover:bg-green-600 focus:ring-green-400"
@@ -112,7 +112,7 @@ export default function AdminDashboard() {
           </div>
           <button
             onClick={() => handleToggle("voting")}
-            className={`px-5 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+            className={`px-5 py-2.5 rounded-full font-semibold cursor-pointer transition-all duration-300 shadow-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 ${
               votingOpen
                 ? "bg-red-500 hover:bg-red-600 focus:ring-red-400"
                 : "bg-green-500 hover:bg-green-600 focus:ring-green-400"
@@ -128,7 +128,7 @@ export default function AdminDashboard() {
         <button
           onClick={() => (window.location.href = "/admin/results")}
           disabled={!(!votingOpen && !registrationOpen)}
-          className={`px-7 py-3 rounded-full font-bold transition-all duration-300 ease-in-out transform shadow-lg ${
+          className={`px-7 py-3 rounded-full font-bold cursor-pointer transition-all duration-300 ease-in-out transform shadow-lg ${
             !votingOpen && !registrationOpen
               ? "bg-purple-600 hover:bg-purple-700 text-white hover:scale-105 hover:shadow-xl"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"

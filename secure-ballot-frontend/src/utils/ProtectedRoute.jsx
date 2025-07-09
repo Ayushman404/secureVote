@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children }) => {
     const createdAt = localStorage.getItem('keyCreatedAt');
 
     if (!privateKey || !createdAt) {
-      toast.error('You must be logged in to access this page.');
+      toast.error('Log in to access this page or Already Voted');
       navigate('/googlelogin');
     } else {
       const age = Date.now() - Number(createdAt);
