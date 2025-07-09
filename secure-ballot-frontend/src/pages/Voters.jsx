@@ -8,7 +8,7 @@ const Voters = () => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/api/voter/list`)
       .then((response) => {
-        console.log("Voters list fetched successfully:", response.data);
+        console.log("Voters list fetched successfully:");
         setVoters(response.data);
       })
       .catch((error) => {

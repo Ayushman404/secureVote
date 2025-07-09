@@ -43,8 +43,8 @@ function verifySignature(message, ring, signature) {
 
   const isValid = cTotal.eq(sumC);
 
-  console.log("🔎 Recomputed cTotal:", cTotal.toString());
-  console.log("🧮 Sum of all c[i]:", sumC.toString());
+  // console.log("🔎 Recomputed cTotal:", cTotal.toString());
+  // console.log("🧮 Sum of all c[i]:", sumC.toString());
   console.log("✅ Signature Valid:", isValid);
 
   return isValid;

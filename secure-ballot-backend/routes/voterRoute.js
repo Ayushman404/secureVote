@@ -1,6 +1,6 @@
 const express = require('express');
 const {listVoters} = require('../controllers/voterController.js');
-const voterModel = require('../models/voterModel.js');
+const googleVoterModel = require('../models/googleVoterModel.js');
 const limiter = require('../middlewares/rateLimiter.js');
 
 const voterRouter = express.Router();
@@ -10,7 +10,7 @@ voterRouter.post("/ring", limiter, async (req, res) => {
   const ringSize = 7;
 
   try {
-    const sampled = await voterModel.aggregate([
+    const sampled = await googleVoterModel.aggregate([
       { $match: { publicKey: { $ne: publicKey } } },
       { $sample: { size: ringSize - 1 } },
       { $project: { publicKey: 1, _id: 0 } },

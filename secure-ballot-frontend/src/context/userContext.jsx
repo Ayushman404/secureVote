@@ -8,7 +8,8 @@ const UserContextProvider = ({ children }) => {
   const [privateKey, setPrivateKey] = useState(null);
   const [userInfo, setUserInfo] = useState({
     name: '',
-    email: ''
+    email: '',
+    picture: ''
   });
 
   const contextValue = {

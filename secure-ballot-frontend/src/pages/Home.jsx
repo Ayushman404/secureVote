@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaShieldAlt, FaLock, FaUsers, FaChartBar, FaKey, FaCogs } from "react-icons/fa";
+import GoogleLoginBtn from "../components/GoogleLoginBtn";
 import { useNavigate } from "react-router-dom";
+import { getPrivateKey } from "../utils/idb";
 
 export default function LandingPage() {
 
@@ -8,13 +10,17 @@ export default function LandingPage() {
 
     const navigate = useNavigate();
     useEffect(()=>{
-        !localStorage.getItem('privateKey') ? setHasKey(false) : setHasKey(true);
+      async function checkKey() {
+        const getKey = await getPrivateKey();
+        !getKey ? setHasKey(false) : setHasKey(true);
+      }
+      checkKey();
     },[])
     const handleGetStarted = () => {
         if (hasKey) {
             navigate('/vote');
         } else {
-            navigate('/register');
+            navigate('/googlelogin');
         }
     };
 
@@ -31,10 +37,11 @@ export default function LandingPage() {
           </p>
           <button
             onClick={handleGetStarted}
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-md transition duration-300 transform hover:scale-105 animate-fade-in-up delay-200"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl shadow-md cursor-pointer transition duration-300 transform hover:scale-105 animate-fade-in-up delay-200"
           >
-            Get Started
+            {hasKey ? "Vote Now" : "Register with Google"}
           </button>
+          {hasKey && <p className="text-md text-green-500">You are already registered go to vote if not Voted Yet</p>}
         </div>
 
         <div className="lg:w-1/2 mb-10 lg:mb-0 animate-fade-in-up delay-300">

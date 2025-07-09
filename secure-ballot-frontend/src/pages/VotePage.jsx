@@ -76,7 +76,7 @@ export default function VotePage() {
       const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/voter/ring`, {
         publicKey: ec.keyFromPrivate(privateKeyHex, 'hex').getPublic().encode('hex')
       });
-      console.log(response.data);
+      // console.log(response.data);
       return response.data.ring;
     } catch (err) {
       console.error("Error fetching voters:", err);
@@ -113,10 +113,10 @@ export default function VotePage() {
 
     try {
       const ring = await getRing();
-      console.log("Ring of Public Keys: ", ring);
+      // console.log("Ring of Public Keys: ", ring);
 
       const signature = sign(message, ring, privateKeyHex);
-      console.log("Signature:", signature);
+      // console.log("Signature:", signature);
 
       // Posting the signature and message to backend
       const response = await axios.post(
@@ -220,7 +220,7 @@ export default function VotePage() {
 
       {/* Countdown */}
       <div className="text-center text-lg font-semibold text-red-600 mb-12 flex justify-center items-center gap-2">
-        <FaClock className="text-xl" /> Voting ends in: <span className="font-bold">{timeLeft}</span>
+        <FaClock className="text-xl" /> Voting ends in: <span className="font-bold">{formatTime(timeLeft)}</span>
       </div>
 
       {/* Voting Cards */}
