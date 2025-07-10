@@ -67,6 +67,7 @@ authRouter.post('/google', limiter, async (req, res) => {
         picture: user.picture,
         publicKey: user.publicKey,
       }
+      
     });
 
   } catch (error) {

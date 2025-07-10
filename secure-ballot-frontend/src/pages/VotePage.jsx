@@ -10,40 +10,40 @@ const ec = new EC('secp256k1');
 
 const positions = [
   {
-    title: "UGR Representative",
+    title: "Cafeteria Quality Assurance Lead",
     candidates: [
-      { name: "Divyam Sharma", image: "/avatar.jpg" },
-      { name: "Panav Arpit Raj", image: "/avatar.jpg" },
-      { name: "Yash Raj", image: "/avatar.jpg" },
+      { name: "Aarav Mehta", image: "/avatar.jpg" },
+      { name: "Riya Verma", image: "/avatar.jpg" },
+      { name: "Kabir Shah", image: "/avatar.jpg" },
     ],
   },
   {
-    title: "VP Gymkhana",
+    title: "Head of Campus Events",
     candidates: [
-      { name: "Neha Mishra", image: "/avatar.jpg" },
-      { name: "Anirudh", image: "/avatar.jpg" },
+      { name: "Tanya Rao", image: "/avatar.jpg" },
+      { name: "Nikhil Jain", image: "/avatar.jpg" },
     ],
   },
   {
-    title: "Academic Council (ACC)",
+    title: "Library Resource Coordinator",
     candidates: [
-      { name: "Pradeep Kumar", image: "/avatar.jpg" },
-      { name: "Ankita Kumari", image: "/avatar.jpg" },
-      { name: "Nirmit Chaursia", image: "/avatar.jpg" },
+      { name: "Sneha Kapoor", image: "/avatar.jpg" },
+      { name: "Ishaan Tripathi", image: "/avatar.jpg" },
+      { name: "Meera Sinha", image: "/avatar.jpg" },
     ],
   },
   {
-    title: "Student Welfare",
+    title: "Digital Infrastructure Lead",
     candidates: [
-      { name: "M. Saketh", image: "/avatar.jpg" },
-      { name: "Abhishek Singh", image: "/avatar.jpg" },
+      { name: "Arjun Das", image: "/avatar.jpg" },
+      { name: "Zoya Mishra", image: "/avatar.jpg" },
     ],
   },
   {
-    title: "HoSCAA",
+    title: "Sports and Wellness Facilitator",
     candidates: [
-      { name: "Dhairya Garg", image: "/avatar.jpg" },
-      { name: "Saksham Thakur", image: "/avatar.jpg" },
+      { name: "Vihaan Roy", image: "/avatar.jpg" },
+      { name: "Diya Nair", image: "/avatar.jpg" },
     ],
   },
 ];
@@ -54,7 +54,7 @@ export default function VotePage() {
   // const { publicKey } = useContext(UserContext);
 
   const [selected, setSelected] = useState({});
-  const [timeLeft, setTimeLeft] = useState(600); // 10 minutes countdown
+  const [timeLeft, setTimeLeft] = useState(600); 
   const [feedback, setFeedback] = useState(null);
   const [votingOpen, setVotingOpen] = useState(false);
 
